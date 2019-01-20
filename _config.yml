@@ -1,7 +1,7 @@
 # Site
 title:              Nathaniel Burgdorfer
 bio:                'Software Developer'
-description:        "Hi, I'm Nathaniel. I am a software developer, a Computer Science Undergrad at Stevens Institute of Technology, and an all-out coffee enthusiast"
+description:        "Hello! Welcome to my webpage. Click below to learn more about me!"
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/headshot.png'
@@ -26,7 +26,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   taylantatli
+disqus_shortname:   nburgdorfer 
 
 # Social
 # if you don't have any of social below, comment the line.
@@ -37,7 +37,7 @@ disqus_shortname:   taylantatli
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
+email:              nburgdorfer@gmail.com
 twitter:            Nate_Burg
 #facebook:          username
 github-url:         nburgdorfer
