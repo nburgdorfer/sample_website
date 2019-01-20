@@ -24,6 +24,6 @@ comments: false
 
 ## Some Example Structures
 
-Sentence with clickable link inside [Example](http://www.google.com).
+Sentence with clickable link inside [here](http://www.google.com).
       
 [Clickable Button Example](https://www.google.com){: .btn}
