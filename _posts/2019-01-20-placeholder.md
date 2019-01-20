@@ -3,7 +3,7 @@ layout: post
 title: "Posts coming soon..."
 date: 2019-01-20
 excerpt: "Just some nice pictures for now."
-tags: [sample post]
+tags: [sample post, pictures, nature, cars]
 comments: true
 ---
 
@@ -45,5 +45,3 @@ Posts will be coming soon, but until then, here are some pictures I like. Enjoy!
 	<a href="../assets/img/background12.jpg"><img src="../assets/img/background12.jpg"></a>
 	<figcaption>A path to Eltz Castle - Wierschem, Germany.</figcaption>
 </figure>
-
-### Cars
