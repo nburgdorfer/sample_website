@@ -9,9 +9,7 @@ comments: true
 
 Posts will be coming soon, but until then, here are some pictures I like. Enjoy!
 
-### Figures 
-
-#### Nature
+### Nature
 
 <figure>
 	<a href="../assets/img/background1.jpg"><img src="../assets/img/background1.jpg"></a>
@@ -48,4 +46,4 @@ Posts will be coming soon, but until then, here are some pictures I like. Enjoy!
 	<figcaption>A path to Eltz Castle - Wierschem, Germany.</figcaption>
 </figure>
 
-#### Cars
+### Cars
