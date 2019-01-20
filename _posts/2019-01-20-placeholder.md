@@ -2,7 +2,7 @@
 layout: post
 title: "Posts coming soon..."
 date: 2019-01-20
-excerpt: "Placeholder for posts."
+excerpt: "Just some nice pictures for now."
 tags: [sample post]
 comments: true
 ---
