@@ -4,8 +4,8 @@ bio:                'Software Developer'
 description:        "Hello! Welcome to my webpage. Click below to learn more about me!"
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/headshot.png'
-background:         'assets/img/background3.jpg'
+logo:               'assets/img/headshot1.png'
+background:         'assets/img/background5.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://nburgdorfer.github.io/
