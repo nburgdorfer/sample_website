@@ -6,13 +6,13 @@ date: 2016-03-21
 comments: false
 ---
     
-<center>Hi, I'm Nathaniel. I am a software developer, a Computer Science Undergrad at Stevens Institute of Technology, and an all-out coffee enthusiast. The rest of bio...</center>
+<center>Hi, I'm Nathaniel. I am a software developer, a Computer Science Undergrad at Stevens Institute of Technology, and an all-out coffee enthusiast.... Thank you so much and I hope you enjoy browsing my webpage and learning more about me!</center>
 
 ## Interests
-* <b>Interest 1</b> Short description about interest 1.
+* <b>Distributed and Parallel Programming/Cloud Computing</b> This is a super broad topic, I know. I have not done an extensive amount of research yet into this topic, however it has really peaked my interest. Attempting to figure out what specific focus of Computer Science to follow can be a daunting tasks. Sometimes the courses you take can help narrow down your search. Recently, I completed a course in Concurrent Programming. I was not sure what to expect going into this class. I hd never heard of threads or the concept of parallel programming before. The basic idea is simple enough to understand but its application was somewhat distant. Throughout the course, I lerned a lot about what is involved in multitasking in software, and a lot about the barriers and problems that arise. This was by far one of my favorite classes I have taken and I want to take what I had learned to the next level. I then began looking into similar topics of study and stumbled upon Distributed Programming and Cloud Computing. Like I stated before, this is all very recent and I have not had a lot of time to dive deeper into the topic. I look forward to doing more research on the topic and finding applications and projects that I can work on.
 
-* <b>Interest 2</b> Short description about interest 2.
+* <b>Systems Programming and DevOps</b> Researching and self-studying to try and find something you like to do can be very effective, and sometimes so can working in a specific field out of necessity and curiosity. I currently work for DexterityDB, a database engine company. My role in this company, as of my first couple of months, has been mainly working on developer tools, like setting up build and test servers and working on automation for a number of operating systems. Soon I will be working more with the core database engine and will be developing new features and optimization for my company. I always like to keep my interests open and try as many new things as possible. My job has given me the oportunity of working in Systems Development and DevOps and I have loved every minute of it. I cannot wait to learn more!
 
-* <b>Interest 3</b> Short description about interest 3.
+* <b>Coffee</b> TODO...
 
-* <b>Interest 4</b> Short description about interest 4.
+* <b>Cooking</b> TODO...
