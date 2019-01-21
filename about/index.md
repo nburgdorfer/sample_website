@@ -18,4 +18,4 @@ comments: false
 * <b>Cooking</b> TODO...
 
 
-<div markdown="0"><a href="../assets/files/resume.pdf" class="btn">Resume</a></div>
+<center><div markdown="0"><a href="../assets/files/resume.pdf" class="btn">Resume</a></div></center
