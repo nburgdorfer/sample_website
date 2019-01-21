@@ -9,14 +9,10 @@ comments: false
 <center>Hi, I'm Nathaniel. I am a software developer, a Computer Science Undergrad at Stevens Institute of Technology, and an all-out coffee enthusiast. The rest of bio...</center>
 
 ## Interests
-### Interest 1
-Short description about interest 1.
+* <b>Interest 1</b> Short description about interest 1.
 
-### Interest 2
-Short description about interest 2.
+* <b>Interest 2</b> Short description about interest 2.
 
-### Interest 3
-Short description about interest 3.
+* <b>Interest 3</b> Short description about interest 3.
 
-### Interest 4
-Short description about interest 4.
+* <b>Interest 4</b> Short description about interest 4.
