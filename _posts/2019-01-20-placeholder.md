@@ -3,7 +3,7 @@ layout: post
 title: "Posts coming soon..."
 date: 2019-01-20
 excerpt: "Just some nice pictures for now."
-tags: [sample post, pictures, nature, cars]
+tags: [sample post, pictures, nature]
 comments: true
 ---
 
