@@ -18,6 +18,6 @@ comments: false
 
 * <b>Coffee</b> There is nothing I love more than waking up to the smell of fresh coffee! I have been a coffee enthusiast since high school. My favorite style has to be espresso (probably from the Italian side of my palate). I make an espresso practically every morning, usually in the form of a capuccino. I even have an instagram account where I post (amature) pictures of either coffee I've made or I've bought at a coffee shop. Here is a link if you are interested! 
 
-<a class="btn" href="http://instagram.com/grumpy_roast/" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-instagram"></i></a>
+<center><a class="btn" href="http://instagram.com/grumpy_roast/" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-instagram"></i></a></center>
 
 * <b>Cooking</b> I am by no means a five-star chef; however, I have found an appreciation and a love of cooking in the past few years. I try to keep it simple and try new things!
