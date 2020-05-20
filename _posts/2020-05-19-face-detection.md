@@ -20,7 +20,7 @@ We will be briefly discussing the CPU implementation of the algorithm for comple
 Before we start reviewing the implementation details, it is important to define some of the structures we will be working with throughout this project. This algorithm uses simple rectangular features that are applied to images in order to obtain a response value as a metric for classifying a subregion of an image. These simple rectangular features (see Figure 1) consist of rectangular sections that are to be summed over the input images. The difference between the sum of the sections within a feature is the response value for that feature for the given image. We use these features and their response values to classify whether or not a subregion of an image contains a face. This response value threshold identifying whether or not a face exists in a subregion is one of the metrics that is learned during the AdaBoosting phase. We will revisit this topic later on.
 
 <figure>
-	<a href="../assets/img/face_detection/fig1.jpg"><img src="../assets/img/face_detection/fig1.jpg"></a>
+	<a href="../assets/img/face_detection/fig1.png"><img src="../assets/img/face_detection/fig1.png"></a>
 	<figcaption> <b>Fig. 1:</b> Examples of simple rectangular features. The features used in this paper consist of either two, three, or four sections. Darker sections indicate negative value sections while lighter sections indicate positive value sections. Taking the difference between sections of a feature involves subtracting the sum of the darker sections from the sum of the lighter sections.</figcaption>
 </figure>
 
