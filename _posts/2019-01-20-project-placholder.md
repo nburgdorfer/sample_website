@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "Projects Coming Soon..."
-date:   2019-01-20
-excerpt: "Detailed project descriptions will be coming soon."
+title:  "A GPU Adaptation of Viola-Jones Face Detection"
+date:   2020-05-19
+excerpt: "A proposed solution for running the Viola-Jones Face Detection algorithm on a GPU using CUDA."
 project: true
-tag:
-- sample project
+tags: [machine learning, computer vision, cuda, c, c++]
 comments: false
 ---
 
