@@ -8,6 +8,8 @@ tags: [machine learning, computer vision, cuda, c, c++]
 comments: false
 ---
 
+<center><a href="https://github.com/nburgdorfer/face_detection" target="_blank" class="btn">GitHub Repo</a></center>
+
 # I. Introduction
 In this project, we look to provide a parallel solution to the problem of visual object detection presented in the original paper by Paul Viola and Michael Jones [1]. The original paper outlines a proposed algorithm as a solution for real-time face detection. We look to take this algorithm and port much of the functionality to a GPU. The areas of the original algorithm that we will be focusing on include the construction of Integral Images and parts of the AdaBoosting process. When computing the integral images, it is necessary to iterate through every pixel of every image in the dataset. Each pixel location includes the current row-sum for the given row, as well as the current column sum among the previous rows. This computation is run over several thousands of images, each of size 24x24 pixels. With the number of iterations of this process reaching several million, the process of integral image computation makes a good candidate for parallel execution. As we break down the learning algorithm proposed by Viola and Jones [1], we start to observe several iterative, independent routines that could also be parallelized. This paper focuses on two similar routines: training weak classifiers and computing classification errors. Both processes involve applying all features to all data samples and are two of the largest computational burdens of the entire algorithm. Since we have over 100,000 features and several thousand images, applying each feature to every image takes billions of operations. Feature applications to images are also independent of each other, making these processes ideal candidates for parallelization. By porting these operations to a GPU, we attempt to reduce these bottlenecks and decrease the computational time of each training iteration.
 
@@ -25,7 +27,7 @@ AIntegral images, or summed area tables, are used in this project to allow featu
 On the CPU, this process takes the form of two nested for-loops iterating through the rows and columns of an image. This process is done for every image that is in our dataset, thus producing three nested loops and millions of operations for the entire dataset. It is these three nested loops we look to parallelize.
 
 ## Training
-As previously stated, the focus of this paper will include only a subset of the learning algorithm involved in the original Face Detection paper [1]. For a more general overview of the learning process used by Viola and Jones, I recommend taking a look at their work. The first subsection we will be taking a look at is that of training weak classifiers. A weak classifier in this context includes a feature, a parity, and a threshold. The parity and the threshold values will be used later in the classification stage and can be ignored for now. This stage works with the response value obtained from applying the feature of the weak classifier to each image in our dataset. Since we do not know a priori which features will give us the best results for classifying faces in images, we must loop through our entire feature bank and apply every feature to every image. The application of each feature involves taking each section of the feature being applied and calculating the sum of the region of the image where sections overlap. In our implementation, we sum all sections of a feature after applying a sign constant to each section sum. The sign constant for the dark and light sections are -1 and 1, respectively. This is equivalent to subtracting the sum of the dark sections from the sum of the light sections and allows us to use the same addition operation for all sections. Here is the sequential training in pseudo-code:
+As previously stated, the focus of this paper will include only a subset of the learning algorithm involved in the original Face Detection paper [1]. For a more general overview of the learning process used by Viola and Jones, I recommend taking a look at their work. The first subsection we will be taking a look at is that of training weak classifiers. A weak classifier in this context includes a feature, a parity, and a threshold. The parity and the threshold values will be used later in the classification stage and can be ignored for now. This stage works with the response value obtained from applying the feature of the weak classifier to each image in our dataset. Since we do not know a priori which features will give us the best results for classifying faces in images, we must loop through our entire feature bank and apply every feature to every image. The application of each feature involves taking each section of the feature being applied and calculating the sum of the region of the image where sections overlap. In our implementation, we sum all sections of a feature after applying a sign constant to each section sum. The sign constant for the dark and light sections are <b>-1</b> and <b>1</b>, respectively. This is equivalent to subtracting the sum of the dark sections from the sum of the light sections and allows us to use the same addition operation for all sections. Here is the sequential training in pseudo-code:
 
 ### (image placeholder)
 
@@ -40,7 +42,7 @@ In order to calculate the classification label, the following equation is used:
 
 ### (equation placeholder)
 
-Here, hj represents the weak classifier, x represents a 24x24 pixel image, fj is the feature for the weak classifier, pj is the parity, and Θj is the threshold.
+Here, <b>h<sub>j</sub></b> represents the weak classifier, <b>x</b> represents a 24x24 pixel image, <b>f<sub>j</sub></b> is the feature for the weak classifier, <b>p<sub>j</sub></b> is the parity, and <b>Θ<sub>j</sub></b> is the threshold.
 
 # III. GPU Implementation
 In this section, we will propose parallel solutions to the above implementations for use on a GPU. Most of the optimizations we shall look to implement include an optimized use of the memory hierarchy, as well as trade-offs between simpler kernel computations and multiple kernel launches. As we will also depict in the results of this project, we attempted to compare the differences of using pointers on the GPU as opposed to creating deep copies of data and allocating pitched arrays on the device for our more complex structures. There was a large difference in computation time between these two methods, with pointer allocating taking much more time relatively. The examples we display throughout this paper will be using pitched data allocation.
@@ -63,7 +65,7 @@ The approach to porting the training process to the GPU is mainly focused on how
 
 ### (equation placeholder)
 
-Here bid.x is our block index, bdim.x is the block dimension, tid.x is the thread index, and N is our total number of samples. The implementation itself is very similar to the CPU version. Here is the parallel training kernel pseudo-code:
+Here <b>bid.x</b> is our block index, <b>bdim.x</b> is the block dimension, <b>tid.x</b> is the thread index, and <b>N</b> is our total number of samples. The implementation itself is very similar to the CPU version. Here is the parallel training kernel pseudo-code:
 
 ### (image placeholder)
 
@@ -71,7 +73,7 @@ Looking to enhance this initial implementation, we look towards the memory hiera
 
 ### (equation placeholder)
 
-Here, iteration is the current kernel launch iteration. Launching the kernel in this manner allows us to have a simpler index computation, removing the need to perform a modulus and division for each thread. This also allows us to load the features into shared memory and reduce the number of global memory accesses for each thread. The downside is that now we must launch the kernel (N / block_size) times. Here is the parallel training kernel pseudo-code using shared memory:
+Here, <b>iteration</b> is the current kernel launch iteration. Launching the kernel in this manner allows us to have a simpler index computation, removing the need to perform a modulus and division for each thread. This also allows us to load the features into shared memory and reduce the number of global memory accesses for each thread. The downside is that now we must launch the kernel <b>(N / block_size)</b> times. Here is the parallel training kernel pseudo-code using shared memory:
 
 ### (image placeholder)
 
