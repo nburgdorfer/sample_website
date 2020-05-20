@@ -90,8 +90,7 @@ Again, we followed the same structure as the training kernel, in which we loaded
 
 # IV. Results
 The datasets used in this paper we sourced from the Extended Yale Face Database [6][7]. There are 4903 positive samples of aligned, cropped (168x192) face images included in this set. The images were then resized to reduce the shape of each image to 24x24 pixel images. Our negative sample dataset was sourced from Google’s Open Images Dataset V6 and manually scrubbed to remove any images including a face. The images were then resized to 48x48 pixel images and split into 4 subregions. These subregions are what we use as our negative samples. To test how our GPU implementations scale with the size of our dataset, we used several different levels of sample sizes and graphed the resulting computation time for each function.
-### Note:
-There is a current limit of 8,000 samples that can be used in the system due to current memory inefficiencies in the implementation.
+<b>Note:</b> There is a current limit of 8,000 samples that can be used in the system due to current memory inefficiencies in the implementation.
 
 ## Integral Images
 Taking a look at the results for the integral images variants, we can see that the CPU version of this function is faster than all of the GPU kernels for computing integral images. This is due in part to the number of samples we could utilize in this implementation. It can not be stated with complete certainty that the CPU runtime will surpass our GPU implementation runtimes, however the data does trend in this direction. This would make sense for low sample numbers to cause the GPU code to take a longer time to execute as there is a lot more overhead involved. In order to compute the integral images of all samples in a dataset, we must launch four kernels. The first to scan through the rows of the images, the second to take the transpose, the third to scan through all the columns, and the fourth to take the transpose again and return the images to their proper orientation. As we observe, this overhead supersedes the benefits of the parallel execution for low sample sizes. We can also observe, as previously stated, the inefficiency of using pointer allocation on the device as opposed to pitched data allocation.
@@ -110,15 +109,9 @@ Since the classification kernel is essentially identical to that of the training
 
 # References
 [1] Viola, P. & Jones, M. “Rapid object detection using a boosted cascade of simple features.” Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001 (2001).
-
 [2] P. M. Kogge and H. S. Stone, “A parallel algorithm for the efficient solution of a general class of recurrence equations,” IEEE Transactions on Computers, vol. C-22, no. 8, pp. 786–793, 1973.
-
 [3] Cen, P. “Study of Viola-Jones Real Time Face Detector.” Stanford University. 2016
-
 [4] Bilgic, B, B K P Horn, and I Masaki. “Efficient Integral ImageComputation on the GPU.” IEEE, 2010. 528–533. © Copyright 2010IEEE
-
 [5] Jain, V. & Patel, D. A GPU Based Implementation of Robust Face Detection System. Procedia Computer Science 87, 156–163 (2016).
-
 [6] Lee, Kuang-Chih, et al. “Acquiring Linear Subspaces for Face Recognition under Variable Lighting.” IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 27, no. 5, 2005, pp. 684–698., doi:10.1109/tpami.2005.92.
-
 [7] Georghiades, A.s., et al. “From Few to Many: Illumination Cone Models for Face Recognition under Variable Lighting and Pose.” IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 23, no. 6, 2001, pp. 643–660., doi:10.1109/34.927464.
