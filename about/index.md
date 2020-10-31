@@ -6,7 +6,7 @@ date: 2010-03-16
 comments: false
 ---
     
-<center>Hi, I'm Nathaniel. I am a software developer and a Machine Learning Masters student at Stevens Institute of Technology. I am very pasionate about a lot of things, but I just listed a few here that I feel fall in line with my career interests. I also love coffee and am alays open to grab a cup and chat about almost anything. I enjoy reading papers, working on challenging problems, and building cool things and I am driven to learn all that I can. Thank you so much and I hope you enjoy browsing my webpage and learning more about me.</center>
+<center>Hi, I'm Nathaniel. I am a software developer and a Machine Learning Masters student at Stevens Institute of Technology. I am very passionate about a lot of things, but I just listed a few here that I feel fall in line with my career interests. I also love coffee and am always open to grab a cup and chat about almost anything. I enjoy reading papers, working on challenging problems, and building cool things and I am driven to learn all that I can. Thank you so much and I hope you enjoy browsing my webpage and learning more about me.</center>
 
 <center><a href="../assets/files/resume.pdf" target="_blank" class="btn">Resume</a></center>
 
